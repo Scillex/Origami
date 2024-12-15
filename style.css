@@ -1,0 +1,59 @@
+body {
+    background-color: rgba(255, 255, 255, 0.87);
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+hr {
+    width: 100%;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1rem 0;
+}
+
+nav {
+    background-color: #dbdbdb; /* Couleur de fond */
+    padding: 10px 0; /* Espacement intérieur */
+}
+
+nav ul {
+    display: flex; /* Utilisation de Flexbox */
+    justify-content: center; /* Centrer les éléments horizontalement */
+    list-style-type: none; /* Supprimer les puces */
+    margin: 0;
+    padding: 0;
+    gap: 20px; /* Espacement entre les éléments */
+}
+
+nav ul li a {
+    text-decoration: none; /* Supprimer le soulignement */
+    color: black; /* Couleur du texte */
+    font-size: 18px; /* Taille de la police */
+    padding: 10px 15px; /* Espacement autour du texte */
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.introduction {
+    width: 50vw;
+    text-align: justify;
+    margin-bottom: 30px;
+}
+
+#autor {
+    align-self: flex-end;
+}
+
+footer {
+    
+}
