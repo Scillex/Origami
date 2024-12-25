@@ -1,6 +1,6 @@
 body {
-    background-color: rgba(255, 255, 255, 0.87);
-    font-family: 'Roboto', sans-serif;
+    background-color: #fbfbfb;
+    font-family: 'Quicksand', sans-serif;
     height: 100vh;
     margin: 0;
     display: flex;
@@ -9,32 +9,60 @@ body {
     text-align: center;
 }
 
-hr {
-    width: 100%;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1rem 0;
+header {
+    background-color: #082630;
+    color: #fdfdfd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 0;
+    gap: 20px;
+}
+
+.head {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.head h1 {
+    font-size: 48px;
+    margin-bottom: 0;
+}
+
+.head p {
+    margin-top: 2px;
+    font-size: 20px;
+    word-spacing: 3px;
 }
 
 nav {
-    background-color: #dbdbdb; /* Couleur de fond */
-    padding: 10px 0; /* Espacement intérieur */
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 nav ul {
-    display: flex; /* Utilisation de Flexbox */
-    justify-content: center; /* Centrer les éléments horizontalement */
-    list-style-type: none; /* Supprimer les puces */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    list-style-type: none;
     margin: 0;
     padding: 0;
-    gap: 20px; /* Espacement entre les éléments */
+    width: inherit;
 }
 
-nav ul li a {
-    text-decoration: none; /* Supprimer le soulignement */
-    color: black; /* Couleur du texte */
-    font-size: 18px; /* Taille de la police */
-    padding: 10px 15px; /* Espacement autour du texte */
+a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 15px;
 }
 
 main {
@@ -44,16 +72,54 @@ main {
     flex-direction: column;
 }
 
+.search-container {
+    width: 100%;
+    margin-bottom: 80px;
+}
+  
+.search-container input[type="text"] {
+    width: 70%; /* Prendre 80% de la largeur du conteneur */
+    padding: 15px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    outline: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-container button {
+    background-color: inherit;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+.div_introduction {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .introduction {
-    width: 50vw;
+    width: 80vw;
     text-align: justify;
-    margin-bottom: 30px;
+    margin-bottom: 0;
 }
 
 #autor {
     align-self: flex-end;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 footer {
-    
+    background-color: #f3f3f3;
 }
