@@ -1,6 +1,6 @@
 body {
     background-color: #fbfbfb;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     height: 100vh;
     margin: 0;
     display: flex;
@@ -68,17 +68,29 @@ a {
 main {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
 }
 
-.search-container {
+.search-container-parent {
     width: 100%;
     margin-bottom: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.search-container {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
   
 .search-container input[type="text"] {
-    width: 70%; /* Prendre 80% de la largeur du conteneur */
+    width: 100%;
     padding: 15px;
     border: none;
     border-radius: 25px;
@@ -89,11 +101,12 @@ main {
 
 .search-container button {
     background-color: inherit;
+    color: rgba(0, 0, 0, 0.7);
     border: none;
-    padding: 10px 15px;
-    border-radius: 25px;
     cursor: pointer;
     font-size: 22px;
+    position: absolute;
+    right: 9px;
 }
 
 h1 {
