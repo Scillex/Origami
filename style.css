@@ -10,8 +10,8 @@ body {
 }
 
 header {
-    background-color: #082630;
-    color: #fdfdfd;
+    background-color: inherit;
+    color: #000000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,6 +26,7 @@ header {
     align-items: center;
     flex-direction: column;
     gap: 0px;
+    margin-bottom: 10px;
 }
 
 .head h1 {
@@ -40,7 +41,7 @@ header {
 }
 
 nav {
-    width: 80%;
+    width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,7 +58,17 @@ nav ul {
     width: inherit;
 }
 
-a {
+nav li {
+    flex: 1;
+    padding: 17px 0px;
+    border-bottom: 1px solid rgb(184, 184, 184);
+}
+
+nav li:hover {
+    background-color: rgb(235, 235, 235);
+}
+
+nav a {
     text-decoration: none;
     color: inherit;
     font-size: 20px;
@@ -83,6 +94,7 @@ main {
 
 .search-container {
     width: 70%;
+    max-width: 900px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -91,12 +103,12 @@ main {
   
 .search-container input[type="text"] {
     width: 100%;
-    padding: 15px;
+    padding: 16px;
     border: none;
-    border-radius: 25px;
+    border-radius: 30px;
     font-size: 16px;
     outline: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 .search-container button {
@@ -131,8 +143,4 @@ h1 {
     align-self: flex-end;
     font-size: 16px;
     font-weight: bold;
-}
-
-footer {
-    background-color: #f3f3f3;
 }
