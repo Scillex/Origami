@@ -3,6 +3,7 @@ body {
     font-family: 'Noto Sans JP', sans-serif;
     height: 100vh;
     margin: 0;
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -38,6 +39,56 @@ header {
     margin-top: 2px;
     font-size: 20px;
     word-spacing: 3px;
+}
+
+.fa-bars {
+    font-size: 22px;
+}
+
+.hamburger {
+    position: absolute;
+    width: 37px;
+    height: 37px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 30px;
+    top: 30px;
+}
+
+.hamburger:hover,
+.select-hamburger:hover {
+    background-color: rgb(235, 235, 235);
+}
+
+.menu-hamburger {
+    display: none;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    right: 30px;
+    top: 65px;
+    width: 150px;
+    height: auto;
+    padding: 13px;
+    border: solid 1px rgb(235, 235, 235);
+    border-radius: 20px;
+}
+
+.menu-hamburger.active {
+    display: flex;
+    justify-content: center;
+}
+
+.select-hamburger {
+    width: 150px;
+    border: solid 1px rgb(155, 153, 153);
+    padding: 7px;
+    border-radius: 10px;
+}
+
+.select-hamburger p {
+    margin: 0;
 }
 
 nav {
@@ -119,28 +170,4 @@ main {
     font-size: 22px;
     position: absolute;
     right: 9px;
-}
-
-h1 {
-    font-size: 30px;
-}
-
-.div_introduction {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.introduction {
-    width: 80vw;
-    text-align: justify;
-    margin-bottom: 0;
-}
-
-#autor {
-    align-self: flex-end;
-    font-size: 16px;
-    font-weight: bold;
 }
