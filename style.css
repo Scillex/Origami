@@ -1,5 +1,21 @@
+/* Variables CSS pour les couleurs et dimensions répétitives */
+:root {
+    --background-color: #fbfbfb;
+    --text-color: #000000;
+    --border-color: rgb(184, 184, 184);
+    --hover-background-color: rgb(235, 235, 235);
+    --menu-background-color: rgb(255, 255, 255);
+    --menu-border-color: rgb(235, 235, 235);
+    --select-border-color: rgb(155, 153, 153);
+    --padding: 20px;
+    --border-radius: 20px;
+    --font-size: 17px;
+    --primary-color: #3498db; /* Couleur principale pour les titres */
+}
+
+/* Styles globaux */
 body {
-    background-color: #fbfbfb;
+    background-color: var(--background-color);
     font-family: 'Noto Sans JP', sans-serif;
     height: 100vh;
     margin: 0;
@@ -9,39 +25,16 @@ body {
     text-align: center;
 }
 
+/* En-tête */
 header {
     background-color: inherit;
-    color: #000000;
+    color: var(--text-color);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding: 30px 0;
     gap: 20px;
-}
-
-.head {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    gap: 0px;
-    margin-bottom: 10px;
-}
-
-.head h1 {
-    font-size: 48px;
-    margin-bottom: 0;
-}
-
-.head p {
-    margin-top: 2px;
-    font-size: 20px;
-    word-spacing: 3px;
-}
-
-.fa-bars {
-    font-size: 22px;
 }
 
 .hamburger {
@@ -56,77 +49,17 @@ header {
     top: 30px;
 }
 
-.hamburger:hover,
-.select-hamburger:hover {
-    background-color: rgb(235, 235, 235);
-}
-
-.menu-hamburger {
-    display: none;
-    background-color: rgb(255, 255, 255);
-    position: absolute;
-    right: 30px;
-    top: 65px;
-    width: 150px;
-    height: auto;
-    padding: 13px;
-    border: solid 1px rgb(235, 235, 235);
-    border-radius: 20px;
-}
-
-.menu-hamburger.active {
-    display: flex;
-    justify-content: center;
-}
-
-.select-hamburger {
-    width: 150px;
-    border: solid 1px rgb(155, 153, 153);
-    padding: 7px;
-    border-radius: 10px;
-}
-
-.select-hamburger p {
-    margin: 0;
-}
-
-nav {
-    margin-top: 50px;
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-nav ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: inherit;
-}
-
-nav li {
-    flex: 1;
-    padding: 17px 0px;
-    border-bottom: 1px solid rgb(184, 184, 184);
-}
-
-nav li:hover {
-    background-color: rgb(235, 235, 235);
-}
-
-nav a {
-    text-decoration: none;
+.hamburger.japonais {
+    left: 30px;
     color: inherit;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 10px 15px;
+    text-decoration: none;
 }
 
+.hamburger:hover {
+    background-color: var(--hover-background-color);
+}
+
+/* Contenu principal */
 main {
     display: flex;
     align-items: center;
@@ -134,40 +67,58 @@ main {
     flex-direction: column;
 }
 
-.search-container-parent {
-    width: 100%;
-    margin-bottom: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 40px;
+.main-japonais h1 {
+    border-bottom: 1px solid black;
+    margin-bottom: 50px;
 }
 
-.search-container {
-    width: 70%;
-    max-width: 800px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-  
-.search-container input[type="text"] {
-    width: 100%;
-    padding: 16px;
-    border: none;
-    border-radius: 30px;
-    font-size: 16px;
-    outline: none;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+/* Récapitulatif */
+.recapitulatif {
+    display: table;
+    background-color: var(--hover-background-color);
+    padding: var(--padding);
+    border-radius: var(--border-radius);
+    text-align: left;
+    width: 80%;
 }
 
-.search-container button {
-    background-color: inherit;
-    color: rgba(0, 0, 0, 0.7);
-    border: none;
-    cursor: pointer;
-    font-size: 22px;
-    position: absolute;
-    right: 9px;
+.recapitulatif ul {
+    display: table-row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-spacing: 10px;
+}
+
+.recapitulatif li {
+    display: table-row;
+}
+
+.recapitulatif li b,
+.recapitulatif li span {
+    display: table-cell;
+    font-size: 17px;
+}
+
+.recapitulatif li b {
+    text-align: left;
+    width: 250px; /* Ajustez cette valeur selon vos besoins */
+}
+
+.recapitulatif li span {
+    text-align: left;
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+    padding: 20px;
+    background-color: var(--background-color);
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--text-color);
 }
