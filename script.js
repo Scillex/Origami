@@ -16,3 +16,14 @@ document.addEventListener('click', () => {
 menu.addEventListener('click', (e) => {
     e.stopPropagation(); // Empêcher la propagation du clic au document
 });
+
+const furigana = document.querySelector('#furigana');
+const title = document.querySelector('#title');
+
+title.addEventListener('mouseover', () => {
+    furigana.style.visibility = 'visible';
+});
+
+title.addEventListener('mouseout', () => {
+    furigana.style.visibility = 'hidden';
+});
