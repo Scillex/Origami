@@ -1,6 +1,6 @@
 @import 'joshwcomeau_reset.css';
 
-/* Variables CSS pour les couleurs et dimensions répétitives */
+/* Variables CSS pour les couleurs */
 :root {
     --background-color: #fbfbfb;
     --text-color: #000000;
@@ -9,6 +9,11 @@
     --menu-background-color: rgb(255, 255, 255);
     --menu-border-color: rgb(235, 235, 235);
     --select-border-color: rgb(155, 153, 153);
+    --box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Variables CSS pour les dimensions */
+:root {
     --padding: 20px;
     --border-radius: 20px;
     --font-size: 17px;
@@ -31,36 +36,8 @@ header {
     color: var(--text-color);
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
     padding: 30px 0;
     gap: 20px;
-}
-
-.head {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 4vh;
-    margin-bottom: 10px;
-}
-
-.head h1 {
-    font-size: 48px;
-}
-
-.head h4 {
-    visibility: hidden;
-    margin-left: 0.5rem;
-    margin-bottom: -15px;
-    letter-spacing: 0.5rem;
-}
-
-.head p {
-    margin-top: 2px;
-    font-size: 20px;
-    word-spacing: 3px;
 }
 
 /* Menu hamburger */
@@ -80,37 +57,42 @@ header {
     top: 30px;
 }
 
-.hamburger:hover,
-.select-hamburger:hover {
-    background-color: var(--hover-background-color);
-}
-
 .menu-hamburger {
     display: none;
     background-color: var(--menu-background-color);
     position: absolute;
     right: 30px;
     top: 65px;
-    width: 150px;
-    padding: 13px;
+    padding: 0 13px;
     border: solid 1px var(--menu-border-color);
     border-radius: var(--border-radius);
+    z-index: 10;
+}
+
+.menu-hamburger ul,
+.menu-hamburger li {
+    padding: 6px 0;
+    list-style: none;
+    margin: none;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
 }
 
 .menu-hamburger.active {
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 5px;
 }
 
 .select-hamburger {
-    width: 150px;
-    border: solid 1px var(--select-border-color);
     padding: 7px;
     border-radius: 10px;
     text-decoration: none;
     color: inherit;
+}
+
+.hamburger:hover,
+.select-hamburger:hover {
+    background-color: var(--hover-background-color);
 }
 
 /* Navigation */
@@ -130,12 +112,18 @@ nav ul {
     margin: 0;
     padding: 0;
     width: inherit;
+    height: 100%;
 }
 
 nav li {
     flex: 1;
-    padding: 17px 0px;
+    padding: 15px 10px;
     border-bottom: 1px solid var(--border-color);
+    width: calc(inherit - padding);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 nav li:hover {
@@ -144,10 +132,14 @@ nav li:hover {
 
 nav a {
     text-decoration: none;
+    text-align: center;
     color: inherit;
     font-size: 20px;
     font-weight: bold;
-    padding: 10px 15px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Contenu principal */
@@ -156,6 +148,32 @@ main {
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 4vh;
+    margin-bottom: 10px;
+}
+
+.title h1 {
+    font-size: 48px;
+}
+
+.title h4 {
+    visibility: hidden;
+    margin-left: 0.5rem;
+    margin-bottom: -15px;
+    letter-spacing: 0.5rem;
+}
+
+.title p {
+    margin-top: 2px;
+    font-size: 20px;
+    word-spacing: 3px;
 }
 
 .search-container-parent {
@@ -168,7 +186,7 @@ main {
 }
 
 .search-container {
-    width: 70%;
+    width: 60%;
     max-width: 800px;
     display: flex;
     align-items: center;
@@ -184,6 +202,11 @@ main {
     font-size: 16px;
     outline: none;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-container input:focus {
+    background-color: rgb(255, 255, 255);
+    box-shadow: var(--box-shadow);
 }
 
 .search-container button {
