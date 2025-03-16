@@ -30,6 +30,10 @@ body {
     text-align: center;
 }
 
+.fa-solid {
+    font-size: 22px;
+}
+
 /* En-tête */
 header {
     background-color: inherit;
@@ -41,10 +45,6 @@ header {
 }
 
 /* Menu hamburger */
-.fa-bars {
-    font-size: 22px;
-}
-
 .hamburger {
     position: absolute;
     width: 37px;
@@ -63,34 +63,55 @@ header {
     position: absolute;
     right: 30px;
     top: 65px;
-    padding: 0 13px;
+    padding: 10px;
     border: solid 1px var(--menu-border-color);
     border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
     z-index: 10;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(-10px);
 }
 
-.menu-hamburger ul,
-.menu-hamburger li {
-    padding: 6px 0;
+.menu-hamburger ul {
     list-style: none;
-    margin: none;
+    padding: 0;
+}
+
+.menu-hamburger li {
+    width: 100%;
+    padding: 5px 0;
     display: flex;
-    align-items: start;
-    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1px solid var(--select-border-color);
+}
+
+.menu-hamburger li:last-child {
+    border-bottom: none;
 }
 
 .menu-hamburger.active {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .select-hamburger {
-    padding: 7px;
+    padding: 10px;
     border-radius: 10px;
     text-decoration: none;
-    color: inherit;
+    color: var(--text-color);
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out;
 }
 
-.hamburger:hover,
+.hamburger:hover {
+    background-color: var(--hover-background-color);
+}
+
 .select-hamburger:hover {
     background-color: var(--hover-background-color);
 }
@@ -117,9 +138,9 @@ nav ul {
 
 nav li {
     flex: 1;
-    padding: 15px 10px;
+    padding: 0;
     border-bottom: 1px solid var(--border-color);
-    width: calc(inherit - padding);
+    width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -137,9 +158,11 @@ nav a {
     font-size: 20px;
     font-weight: bold;
     height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 15px 10px;
 }
 
 /* Contenu principal */
@@ -214,9 +237,11 @@ main {
     color: rgba(0, 0, 0, 0.7);
     border: none;
     cursor: pointer;
-    font-size: 22px;
     position: absolute;
     right: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Footer */
@@ -231,4 +256,31 @@ footer p {
     margin: 0;
     font-size: 14px;
     color: var(--text-color);
+}
+
+
+
+/* Introduction */
+.escape {
+    position: absolute;
+    width: 37px;
+    height: 37px;
+    border-radius: 5px;
+    
+    right: 30px;
+    top: 30px;
+}
+
+.escape:hover {
+    background-color: var(--hover-background-color);
+}
+
+.escape a {
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
