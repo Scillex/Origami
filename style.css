@@ -10,13 +10,12 @@
     --menu-border-color: rgb(235, 235, 235);
     --select-border-color: rgb(155, 153, 153);
     --box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-}
 
-/* Variables CSS pour les dimensions */
-:root {
+    /* Variables CSS pour les dimensions */
     --padding: 20px;
     --border-radius: 20px;
     --font-size: 17px;
+    --aside-width: 50rem;
 }
 
 /* Styles globaux */
@@ -293,51 +292,87 @@ footer p {
 .container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: row;
-    gap: 4rem;
+}
+
+.table-of-contents-sidebar {
+    height: 100%;
+    padding-top: 5rem;
 }
 
 .table-of-contents {
     position: sticky;
+    top: 5rem;
 }
 
-@media (max-width: 1000px) {
+#what-is-origami, 
+#history-of-origami, 
+#basic-techniques, 
+#types-of-origami, 
+#materials-needed, 
+#getting-started, 
+#conclusion {
+    scroll-margin-top: 40px; /* Ajuste la valeur ici selon tes besoins */
+}
+
+/*@media (max-width: 69rem) {
     .table-of-contents-sidebar {
         display: none;
     }
-}
+    .container {
+        padding-right: 2rem;
+    }
+}*/
 
 .table-of-contents {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
     background: var(--background-color, inherit);
     padding: 3rem 1rem;
 }
 
 .table-of-contents ul {
+    width: 100%;
     list-style: none;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    border-left: 2px solid var(--border-color, #ddd);
-    gap: 1rem;
-    margin: 0;
+    justify-content: flex-start;
+}
+
+.table-of-contents li {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .table-of-contents li a {
     font-size: 0.9rem;
-    transition: color 0.3s ease, padding-left 0.3s ease;
     text-decoration: none;
-    color: inherit;
+    color: rgba(0, 0, 0, 0.5);
+    width: 12rem;
+    text-align: start;
     font-weight: bold;
-    padding: 15px 10px;
+    border-left: 2px solid var(--border-color, #ddd);
+    padding: 15px 30px;
 }
-  
+
 .table-of-contents li a:hover,
 .table-of-contents li a:focus {
-    padding-left: 6px;
+    color: var(--text-color, #000);
+}
+
+.table-of-contents li a.active {
+    color: var(--text-color, #000);
+    border-color: #A9792B;
+    padding-left: 15px;
+    border-left: 2px solid var(--text-color, #000);
+}
+
+aside:nth-of-type(2) {
+    width: var(--aside-width, 50rem);
 }
 
 .content {
