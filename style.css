@@ -15,7 +15,7 @@
     --padding: 20px;
     --border-radius: 20px;
     --font-size: 17px;
-    --aside-width: 50rem;
+    --aside-width: 55rem;
 }
 
 /* Styles globaux */
@@ -292,13 +292,19 @@ footer p {
 .container {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     flex-direction: row;
+    gap: 5rem;
+}
+
+aside:first-child {
+    width: var(--aside-width, 50rem);
 }
 
 .table-of-contents-sidebar {
     height: 100%;
     padding-top: 5rem;
+    margin-right: 2rem;
 }
 
 .table-of-contents {
@@ -316,14 +322,14 @@ footer p {
     scroll-margin-top: 10px; /* Ajuste la valeur ici selon tes besoins */
 }
 
-/*@media (max-width: 69rem) {
+@media (max-width: 75rem) {
     .table-of-contents-sidebar {
         display: none;
     }
     .container {
         padding-right: 2rem;
     }
-}*/
+}
 
 .table-of-contents {
     display: flex;
@@ -364,10 +370,6 @@ footer p {
     color: var(--text-color, #000);
     border-color: #A9792B;
     background-color: var(--hover-background-color, gray);
-}
-
-aside:nth-of-type(2) {
-    width: var(--aside-width, 50rem);
 }
 
 .content:first-child {
