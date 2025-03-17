@@ -1,0 +1,18 @@
+L'origami est l'art japonais du pliage du papier, combinant les mots oru (折る), signifiant "plier", et kami (紙), signifiant "papier". Cet art consiste à transformer une simple feuille de papier en une figure bidimensionnelle ou tridimensionnelle en effectuant une série de plis précis, sans découper ni coller le papier.
+
+Les modèles d'origami varient en complexité, allant de formes simples comme des grues ou des avions en papier, à des sculptures plus détaillées représentant des animaux, des fleurs ou des objets géométriques.
+
+Au-delà de son aspect artistique, l'origami repose sur des principes mathématiques et géométriques, explorant des concepts tels que les symétries, les angles et les proportions. Il a également des applications pratiques dans divers domaines, comme la conception de structures pliables pour la science et la technologie. Par exemple, l'ingénierie de l'origami est utilisée pour concevoir des structures déployables et adaptatives dans l'espace, comme les panneaux solaires des satellites, ainsi que dans la conception d'airbags et de stents médicaux.
+
+De plus, des chercheurs ont utilisé des conceptions d'origami pour plier l'ADN en structures spécifiques, ouvrant la voie à des applications potentielles en nanotechnologie et en médecine.
+
+sources: fr.wikipedia.org, nsf.gov
+
+traduction anglaise:
+Origami is the Japanese art of paper folding, combining the words oru (折る), meaning “to fold”, and kami (紙), meaning “paper”. This art involves transforming a simple sheet of paper into a two- or three-dimensional figure by making a series of precise folds, without cutting or gluing the paper.
+
+Origami models vary in complexity, from simple shapes such as cranes or paper airplanes, to more detailed sculptures representing animals, flowers or geometric objects.
+
+Beyond its artistic aspect, origami is based on mathematical and geometric principles, exploring concepts such as symmetries, angles and proportions. It also has practical applications in various fields, such as the design of foldable structures for science and technology. For example, origami engineering is used to design deployable and adaptive structures in space, such as solar panels on satellites, as well as in the design of airbags and medical stents.
+
+In addition, researchers have used origami designs to fold DNA into specific structures, paving the way for potential applications in nanotechnology and medicine.
