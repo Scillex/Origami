@@ -313,7 +313,7 @@ footer p {
 #materials-needed, 
 #getting-started, 
 #conclusion {
-    scroll-margin-top: 40px; /* Ajuste la valeur ici selon tes besoins */
+    scroll-margin-top: 10px; /* Ajuste la valeur ici selon tes besoins */
 }
 
 /*@media (max-width: 69rem) {
@@ -333,16 +333,13 @@ footer p {
 }
 
 .table-of-contents ul {
-    width: 100%;
     list-style: none;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     justify-content: flex-start;
 }
 
 .table-of-contents li {
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -354,7 +351,6 @@ footer p {
     color: rgba(0, 0, 0, 0.5);
     width: 12rem;
     text-align: start;
-    font-weight: bold;
     border-left: 2px solid var(--border-color, #ddd);
     padding: 15px 30px;
 }
@@ -367,12 +363,15 @@ footer p {
 .table-of-contents li a.active {
     color: var(--text-color, #000);
     border-color: #A9792B;
-    padding-left: 15px;
-    border-left: 2px solid var(--text-color, #000);
+    background-color: var(--hover-background-color, gray);
 }
 
 aside:nth-of-type(2) {
     width: var(--aside-width, 50rem);
+}
+
+.content:first-child {
+    margin-top: 4rem;
 }
 
 .content {

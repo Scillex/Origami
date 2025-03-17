@@ -1,29 +1,71 @@
-const hamburger = document.querySelector('.hamburger');
-const menu = document.querySelector('.menu-hamburger');
+// Vérifier l'URL de la page
+const currentPage = window.location.pathname;
 
-// Afficher ou cacher le menu au clic sur le hamburger
-hamburger.addEventListener('click', (e) => {
-    menu.classList.toggle('active'); // Alterner la classe active
-    e.stopPropagation(); // Empêcher la propagation du clic au document
-});
+// Menu hamburger et Furigana Title pour index.html
+if (currentPage.includes('index.html')) {
+    // Menu hamburger
+    const hamburger = document.querySelector('.hamburger');
+    const menu = document.querySelector('.menu-hamburger');
 
-// Cacher le menu au clic n'importe où sur le document
-document.addEventListener('click', () => {
-    menu.classList.remove('active'); // Supprimer la classe active
-});
+    hamburger.addEventListener('click', (e) => {
+        menu.classList.toggle('active');
+        e.stopPropagation();
+    });
 
-// Empêcher la fermeture si on clique sur le menu lui-même
-menu.addEventListener('click', (e) => {
-    e.stopPropagation(); // Empêcher la propagation du clic au document
-});
+    document.addEventListener('click', () => {
+        menu.classList.remove('active');
+    });
 
-const furigana = document.querySelector('#furigana');
-const title = document.querySelector('#title');
+    menu.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
 
-title.addEventListener('mouseover', () => {
-    furigana.style.visibility = 'visible';
-});
+    // Furigana Title
+    const furigana = document.querySelector('#furigana');
+    const title = document.querySelector('#title');
 
-title.addEventListener('mouseout', () => {
-    furigana.style.visibility = 'hidden';
-});
+    title.addEventListener('mouseover', () => {
+        furigana.style.visibility = 'visible';
+    });
+
+    title.addEventListener('mouseout', () => {
+        furigana.style.visibility = 'hidden';
+    });
+}
+
+// Table of contents pour introduction.html
+if (currentPage.includes('introduction.html')) {
+    document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll(
+            "#what-is-origami, #history-of-origami, #basic-techniques, #types-of-origami, #materials-needed, #getting-started, #conclusion"
+        );
+        const navLinks = document.querySelectorAll(".table-of-contents li a");
+    
+        function updateActiveSection() {
+            let currentSection = null;
+            let minDistance = Infinity;
+            
+            sections.forEach((section) => {
+                const rect = section.getBoundingClientRect();
+                // On considère uniquement les sections qui sont au moins partiellement visibles
+                if (rect.top >= 0 && rect.top < minDistance) {
+                    minDistance = rect.top;
+                    currentSection = section;
+                }
+            });
+            
+            if (currentSection) {
+                const id = currentSection.getAttribute("id");
+                navLinks.forEach((link) => {
+                    link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
+                });
+            }
+        }
+    
+        // Mettre à jour lors du scroll
+        document.addEventListener("scroll", updateActiveSection, { passive: true });
+    
+        // Mettre à jour une première fois au chargement
+        updateActiveSection();
+    });    
+}
