@@ -1,7 +1,7 @@
 // Vérifier l'URL de la page
 const currentPage = window.location.pathname;
 
-// Menu hamburger et Furigana Title pour index.html
+// index.html
 if (currentPage.includes('index.html')) {
     // Menu hamburger
     const hamburger = document.querySelector('.hamburger');
@@ -33,8 +33,9 @@ if (currentPage.includes('index.html')) {
     });
 }
 
-// Table of contents pour introduction.html
-if (currentPage.includes('introduction.html')) {
+// introduction.html
+if (currentPage.includes('introduction.html') || currentPage.includes('basic-foundations.html')) {
+    // Table of contents
     document.addEventListener("DOMContentLoaded", function () {
         const sections = document.querySelectorAll(
             "#what-is-origami, #history-of-origami, #basic-techniques, #types-of-origami, #materials-needed, #getting-started, #conclusion"
@@ -67,5 +68,5 @@ if (currentPage.includes('introduction.html')) {
     
         // Mettre à jour une première fois au chargement
         updateActiveSection();
-    });    
+    });     
 }
