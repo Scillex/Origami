@@ -17,7 +17,7 @@
     --padding: 20px;
     --border-radius: 20px;
     --font-size: 17px;
-    --aside-width: 55rem;
+    --aside-width: 40rem;
 }
 
 /* Styles globaux */
@@ -318,17 +318,7 @@ aside:first-child {
     top: 5rem;
 }
 
-#what-is-origami, 
-#history-of-origami, 
-#basic-techniques, 
-#types-of-origami, 
-#materials-needed, 
-#getting-started, 
-#conclusion {
-    scroll-margin-top: 10px; /* Ajuste la valeur ici selon tes besoins */
-}
-
-@media (max-width: 75rem) {
+@media (max-width: 70rem) {
     .table-of-contents-sidebar {
         display: none;
     }
@@ -351,17 +341,17 @@ aside:first-child {
 .table-of-contents li {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
 }
 
 .table-of-contents li a {
-    font-size: 0.9rem;
+    font-size: 0.78rem;
     text-decoration: none;
     color: rgba(0, 0, 0, 0.5);
-    width: 12rem;
+    width: 15rem;
     text-align: start;
     border-left: 2px solid var(--border-color, #ddd);
-    padding: 15px 30px;
+    padding: 10px 20px;
 }
 
 .table-of-contents li a:hover,
@@ -380,28 +370,17 @@ aside:first-child {
 }
 
 .content {
-    background: #fff;
-    padding: 3vh 3vh 1vh 3vh;
-    margin: 5% 0;
-    border-radius: 10px;
-    box-shadow: var(--box-shadow);
+    margin-bottom: 5vh;
 }
 
 .content h2 {
     color: #333;
-    padding-bottom: 10px;
-    border-bottom: 2px solid var(--border-color);
-    margin-bottom: 15px;
+    font-size: 20px;
+    text-align: left;
+    margin-bottom: 1vh;
 }
 
 .content p {
     text-align: justify;
-}
-
-.source {
-    margin-top: 2vh;
-}
-
-.source p {
-    font-size: 12px;
+    line-height: 30px;
 }

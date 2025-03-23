@@ -33,12 +33,12 @@ if (currentPage.includes('index.html')) {
     });
 }
 
-// introduction.html
+// introduction.html, basic-foundations.html
 if (currentPage.includes('introduction.html') || currentPage.includes('basic-foundations.html')) {
     // Table of contents
     document.addEventListener("DOMContentLoaded", function () {
         const sections = document.querySelectorAll(
-            "#what-is-origami, #history-of-origami, #basic-techniques, #types-of-origami, #materials-needed, #getting-started, #conclusion"
+            "#origins-and-etymology, #ancient-roots-china-and-early-japan, #development-within-japanese-culture, #the-edo-period-formalization-and-popularization, #early-written-records, #western-influence-and-globalization, #modern-origami-and-its-masters, #artistic-and-technical-innovations, #beyond-art-scientific-and-technological-applications, #therapeutic-benefits, #extended-definition-creativity-and-personal-interpretation, #symbols-and-meanings-the-crane-and-beyond, #origami-an-accessible-and-universal-art, #the-importance-of-diagrams-a-universal-visual-language, #conclusion"
         );
         const navLinks = document.querySelectorAll(".table-of-contents li a");
     
@@ -48,8 +48,10 @@ if (currentPage.includes('introduction.html') || currentPage.includes('basic-fou
             
             sections.forEach((section) => {
                 const rect = section.getBoundingClientRect();
-                // On considère uniquement les sections qui sont au moins partiellement visibles
-                if (rect.top >= 0 && rect.top < minDistance) {
+                const visibleHeight = Math.max(0, rect.bottom - Math.max(rect.top, 0)); // Hauteur visible de l'élément
+               
+                // Vérifier si l'élément est au moins partiellement visible avec plus de 40px
+                if (visibleHeight > 40 && rect.top < minDistance) {
                     minDistance = rect.top;
                     currentSection = section;
                 }
@@ -68,5 +70,5 @@ if (currentPage.includes('introduction.html') || currentPage.includes('basic-fou
     
         // Mettre à jour une première fois au chargement
         updateActiveSection();
-    });     
+    });
 }
