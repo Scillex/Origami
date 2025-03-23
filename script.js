@@ -51,7 +51,7 @@ if (currentPage.includes('introduction.html') || currentPage.includes('basic-fou
                 const visibleHeight = Math.max(0, rect.bottom - Math.max(rect.top, 0)); // Hauteur visible de l'élément
                
                 // Vérifier si l'élément est au moins partiellement visible avec plus de 40px
-                if (visibleHeight > 40 && rect.top < minDistance) {
+                if (visibleHeight > 100 && rect.top < minDistance) {
                     minDistance = rect.top;
                     currentSection = section;
                 }
