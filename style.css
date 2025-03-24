@@ -4,7 +4,7 @@
     /* Variables CSS pour les couleurs */
     --main-color: #A9792B;
     --secondary-color: #f8ca5f;
-    --background-color: #fbfbfb;
+    --background-color: #faf9f7;
     --text-color: #000000;
     --border-color: rgb(184, 184, 184);
     --hover-background-color: rgb(235, 235, 235);
@@ -18,10 +18,17 @@
     --border-radius: 20px;
     --font-size: 17px;
     --aside-width: 40rem;
+    --line-height: 1.9;
 }
 
 /* Styles globaux */
 body {
+    /* 
+    background: url(image/istockphoto-1472819341.jpg);
+    background: url(image/istockphoto-1383643409.jpg);
+    background-size: cover; 
+    */
+    background-color: var(--background-color);
     background-color: var(--background-color);
     font-family: 'Noto Sans JP', system-ui, sans-serif;
     height: 100vh;
@@ -43,7 +50,6 @@ body {
 /* En-tête */
 header {
     position: relative;
-    background-color: inherit;
     color: var(--text-color);
     display: flex;
     justify-content: center;
@@ -254,7 +260,6 @@ main {
 /* Footer */
 footer {
     padding: 20px;
-    background-color: var(--background-color);
     text-align: center;
 }
 
@@ -386,7 +391,7 @@ aside:first-child {
 
 .content p {
     text-align: justify;
-    line-height: 30px;
+    line-height: var(--line-height, 30px);
 }
 
 .content ul {
@@ -396,6 +401,7 @@ aside:first-child {
 .content li {
     margin-bottom: 0.5rem;
     text-align: justify;
+    line-height: var(--line-height, 30px);
 }
 
 .content li span {
