@@ -4,7 +4,7 @@
     /* Variables CSS pour les couleurs */
     --main-color: #A9792B;
     --secondary-color: #f8ca5f;
-    --background-color: #faf9f7;
+    --background-color: #ffffff;
     --text-color: #000000;
     --border-color: rgb(184, 184, 184);
     --hover-background-color: rgb(235, 235, 235);
@@ -16,7 +16,9 @@
     /* Variables CSS pour les dimensions */
     --padding: 20px;
     --border-radius: 20px;
-    --font-size: 17px;
+    --font-size: 16px;
+    --big-font-size: 20px;
+    --giga-font-size: 2.5rem;
     --aside-width: 40rem;
     --line-height: 1.9;
 }
@@ -30,13 +32,28 @@
 */
 
 /* Styles globaux */
+@media (max-width: 768px) {
+    :root {
+        --giga-font-size: 2.1rem;
+        --big-font-size: 17px;
+        --font-size: 14px;
+    }
+    #furigana {
+        font-size: 0.8rem;
+    }
+}
+@media (max-width: 400px) {
+    :root {
+        --giga-font-size: 1.7rem;
+        --big-font-size: 12px;
+        --font-size: 12px;
+    }
+    #furigana {
+        font-size: 0.6px;
+    }
+}
+
 body {
-    /* 
-    background: url(image/istockphoto-1472819341.jpg);
-    background: url(image/istockphoto-1383643409.jpg);
-    background-size: cover; 
-    */
-    background-color: var(--background-color);
     background-color: var(--background-color);
     font-family: 'Noto Sans JP', system-ui, sans-serif;
     height: 100vh;
@@ -175,7 +192,7 @@ header {
     text-decoration: none;
     text-align: center;
     color: inherit;
-    font-size: 20px;
+    font-size: var(--big-font-size, 20px);
     font-weight: bold;
     height: 100%;
     width: 100%;
@@ -203,7 +220,7 @@ main {
 }
 
 .title h1 {
-    font-size: 48px;
+    font-size: var(--giga-font-size, 2.5rem);
 }
 
 .title h4 {
@@ -211,11 +228,12 @@ main {
     margin-left: 0.5rem;
     margin-bottom: -15px;
     letter-spacing: 0.5rem;
+    font-size: var(--big-font-size, 20px);
 }
 
 .title p {
     margin-top: 2px;
-    font-size: 20px;
+    font-size: var(--big-font-size, 20px);
     word-spacing: 3px;
 }
 
@@ -273,7 +291,7 @@ footer {
 
 footer p {
     margin: 0;
-    font-size: 14px;
+    font-size: var(--font-size, 16px);
     color: var(--text-color);
 }
 
@@ -309,7 +327,11 @@ footer p {
 
 .showcase h1 {
     margin-top: 3vh;
-    font-size: 2.5em;
+    font-size: var(--giga-font-size, 2.5rem);
+}
+
+.showcase p {
+    font-size: var(--big-font-size, 20px);
 }
 
 .container {
@@ -396,13 +418,14 @@ aside:first-child {
 
 .content h2 {
     color: #333;
-    font-size: 20px;
+    font-size: var(--big-font-size, 20px);
     text-align: left;
     margin-bottom: 1vh;
 }
 
 .content p {
     text-align: justify;
+    font-size: var(--font-size, 16px);
     line-height: var(--line-height, 30px);
 }
 
