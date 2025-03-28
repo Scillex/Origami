@@ -32,44 +32,69 @@
 */
 
 /* Styles globaux */
-@media (max-width: 768px) {
-    :root {
-        --giga-font-size: 2.1rem;
-        --big-font-size: 17px;
-        --font-size: 14px;
-    }
-    #furigana {
-        font-size: 0.8rem;
-    }
-}
-@media (max-width: 400px) {
+@media (max-width: 504px) {
     :root {
         --giga-font-size: 1.7rem;
-        --big-font-size: 12px;
-        --font-size: 12px;
+        --big-font-size: 0.7rem;
+        --font-size: 0.7rem;
+        --border-radius: 10px;
     }
     #furigana {
-        font-size: 0.6px;
+        font-size: 0.6rem;
+    }
+    .button {
+        width: 27px !important;
+        height: 27px !important;
+    }
+    .fa-solid {
+        font-size: 1rem !important;
+    }
+    .menu-hamburger {
+        top: 55px !important;
+    }
+    .search-container input {
+        height: 3rem;
+        font-size: 0.8rem !important;
     }
 }
 
 body {
     background-color: var(--background-color);
     font-family: 'Noto Sans JP', system-ui, sans-serif;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     text-align: center;
+    justify-content: space-between;
 }
 
 ::selection {
     background-color: var(--secondary-color); /* Couleur de fond */
     color: auto; /* Couleur du texte */
-  }
+}
+
 
 .fa-solid {
-    font-size: 22px;
+    font-size: 1.4rem;
 }
+
+.button {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 37px;
+    height: 37px;
+    border-radius: 5px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button:hover {
+    background-color: var(--hover-background-color);
+}
+
 
 /* En-tête */
 header {
@@ -82,17 +107,6 @@ header {
 }
 
 /* Menu hamburger */
-.hamburger {
-    position: absolute;
-    width: 37px;
-    height: 37px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    right: 30px;
-    top: 30px;
-}
 
 .menu-hamburger {
     display: none;
@@ -105,9 +119,6 @@ header {
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     z-index: 10;
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    opacity: 0;
-    transform: translateY(-10px);
 }
 
 .menu-hamburger ul {
@@ -121,6 +132,7 @@ header {
     display: flex;
     justify-content: center;
     border-bottom: 1px solid var(--select-border-color);
+    font-size: var(--font-size);
 }
 
 .menu-hamburger li:last-child {
@@ -131,8 +143,6 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .select-hamburger {
@@ -143,10 +153,6 @@ header {
     width: 100%;
     text-align: center;
     transition: background-color 0.3s ease-in-out;
-}
-
-.hamburger:hover {
-    background-color: var(--hover-background-color);
 }
 
 .select-hamburger:hover {
@@ -223,10 +229,10 @@ main {
     font-size: var(--giga-font-size, 2.5rem);
 }
 
-.title h4 {
+#furigana {
     visibility: hidden;
     margin-left: 0.5rem;
-    margin-bottom: -15px;
+    margin-bottom: -0.9em;
     letter-spacing: 0.5rem;
     font-size: var(--big-font-size, 20px);
 }
@@ -239,7 +245,7 @@ main {
 
 .search-container-parent {
     width: 100%;
-    margin-bottom: 80px;
+    margin-bottom: 15vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -258,9 +264,10 @@ main {
 .search-container input[type="text"] {
     width: 100%;
     padding: 16px;
+    padding-right: 3rem;
     border: none;
     border-radius: 30px;
-    font-size: 16px;
+    font-size: var(--font-size, 16px);
     outline: none;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
@@ -278,13 +285,12 @@ main {
     position: absolute;
     right: 9px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-end;
+    justify-content: flex-end;
 }
 
 /* Footer */
 footer {
-    margin-top: auto;
     padding: 20px;
     text-align: center;
 }
@@ -298,23 +304,6 @@ footer p {
 
 
 /* Introduction */
-.escape {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    width: 37px;
-    height: 37px;
-    border-radius: 5px;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.escape:hover {
-    background-color: var(--hover-background-color);
-}
-
 .escape a {
     text-decoration: none;
     color: inherit;
