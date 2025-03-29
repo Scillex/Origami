@@ -135,7 +135,7 @@ header {
 
 /* Navigation */
 .index-nav {
-    margin-top: 5vh;
+    margin-top: 2vh;
     width: 90%;
     display: flex;
     justify-content: center;
@@ -184,9 +184,10 @@ header {
 
 /* Contenu principal */
 main {
+    flex: 1;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     flex-direction: column;
 }
 
