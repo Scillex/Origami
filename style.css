@@ -135,7 +135,7 @@ header {
 
 /* Navigation */
 .index-nav {
-    margin-top: 2vh;
+    margin-top: 5vh;
     width: 90%;
     display: flex;
     justify-content: center;
@@ -405,6 +405,9 @@ aside:first-child {
         --big-font-size: 0.7rem;
         --font-size: 0.7rem;
         --border-radius: 10px;
+    }
+    .index-nav {
+        margin-top: 2vh;
     }
     #furigana {
         font-size: 0.6rem;
