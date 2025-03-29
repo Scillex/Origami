@@ -32,32 +32,6 @@
 */
 
 /* Styles globaux */
-@media (max-width: 504px) {
-    :root {
-        --giga-font-size: 1.7rem;
-        --big-font-size: 0.7rem;
-        --font-size: 0.7rem;
-        --border-radius: 10px;
-    }
-    #furigana {
-        font-size: 0.6rem;
-    }
-    .button {
-        width: 27px !important;
-        height: 27px !important;
-    }
-    .fa-solid {
-        font-size: 1rem !important;
-    }
-    .menu-hamburger {
-        top: 55px !important;
-    }
-    .search-container input {
-        height: 3rem;
-        font-size: 0.8rem !important;
-    }
-}
-
 body {
     background-color: var(--background-color);
     font-family: 'Noto Sans JP', system-ui, sans-serif;
@@ -80,8 +54,8 @@ body {
 
 .button {
     position: absolute;
-    top: 30px;
-    right: 30px;
+    top: 1rem;
+    right: 1rem;
     width: 37px;
     height: 37px;
     border-radius: 5px;
@@ -112,8 +86,8 @@ header {
     display: none;
     background-color: var(--menu-background-color);
     position: absolute;
-    right: 30px;
-    top: 65px;
+    right: 1rem;
+    top: calc(1rem + 37px);
     padding: 10px;
     border: solid 1px var(--menu-border-color);
     border-radius: var(--border-radius);
@@ -161,7 +135,7 @@ header {
 
 /* Navigation */
 .index-nav {
-    margin-top: 50px;
+    margin-top: 5vh;
     width: 90%;
     display: flex;
     justify-content: center;
@@ -325,7 +299,7 @@ footer p {
 
 .container {
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     flex-direction: row;
     gap: 5rem;
@@ -336,24 +310,15 @@ aside:first-child {
     width: var(--aside-width, 50rem);
 }
 
-.table-of-contents-sidebar {
-    height: 100%;
-    padding-top: 5rem;
-}
-
 .table-of-contents {
     position: sticky;
-    top: 2vh;
+    top: 0;
+    height: 100%;
+    margin-top: 5rem;
 }
 
 .container aside:first-child div{
     scroll-margin-top: 4vh;
-}
-
-@media (max-width: 70rem) {
-    .table-of-contents-sidebar {
-        display: none;
-    }
 }
 
 .table-of-contents {
@@ -376,7 +341,7 @@ aside:first-child {
     justify-content: start;
 }
 
-.table-of-contents li a {
+.table-of-contents a {
     font-size: 0.78rem;
     text-decoration: none;
     color: rgba(0, 0, 0, 0.5);
@@ -386,12 +351,12 @@ aside:first-child {
     padding: 10px 20px;
 }
 
-.table-of-contents li a:hover,
-.table-of-contents li a:focus {
+.table-of-contents a:hover,
+.table-of-contents a:focus {
     color: var(--text-color, #000);
 }
 
-.table-of-contents li a.active {
+.table-of-contents a.active {
     color: var(--text-color, #000);
     border-color: var(--main-color, #A9792B);
     background-color: var(--hover-background-color, gray);
@@ -412,7 +377,8 @@ aside:first-child {
     margin-bottom: 1vh;
 }
 
-.content p {
+.content p,
+.content li {
     text-align: justify;
     font-size: var(--font-size, 16px);
     line-height: var(--line-height, 30px);
@@ -420,14 +386,49 @@ aside:first-child {
 
 .content ul {
     list-style-type: circle;
+    font-size: inherit;
 }
 
 .content li {
     margin-bottom: 0.5rem;
-    text-align: justify;
-    line-height: var(--line-height, 30px);
 }
 
 .content li span {
     font-weight: 600;
+}
+
+/* Media Queries */
+@media (max-width: 492px) {
+    :root {
+        --giga-font-size: 1.7rem;
+        --big-font-size: 0.7rem;
+        --font-size: 0.7rem;
+        --border-radius: 10px;
+    }
+    #furigana {
+        font-size: 0.6rem;
+    }
+    .button {
+        width: 27px;
+        height: 27px;
+    }
+    .fa-solid {
+        font-size: 1rem;
+    }
+    .menu-hamburger {
+        top: calc(1rem + 27px);
+    }
+    .search-container {
+        width: 75%;
+    }
+    .search-container input {
+        height: 2.5rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 70rem) {
+    .table-of-contents {
+        display: none;
+    }
 }
