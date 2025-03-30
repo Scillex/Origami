@@ -2,8 +2,8 @@
 
 :root {
     /* Variables CSS pour les couleurs */
-    --main-color: #A9792B;
-    --secondary-color: #f8ca5f;
+    --main-color: pink;
+    --secondary-color: red;
     --background-color: #ffffff;
     --text-color: #000000;
     --border-color: rgb(184, 184, 184);
@@ -23,14 +23,6 @@
     --line-height: 1.9;
 }
 
-/*
-:root {
-    /* Couleurs alternatives
-    --main-color: red;
-    --secondary-color: pink;
-}
-*/
-
 /* Styles globaux */
 body {
     background-color: var(--background-color);
@@ -43,7 +35,7 @@ body {
 }
 
 ::selection {
-    background-color: var(--secondary-color); /* Couleur de fond */
+    background-color: var(--main-color); /* Couleur de fond */
     color: auto; /* Couleur du texte */
 }
 
@@ -210,6 +202,7 @@ main {
     margin-bottom: -0.9em;
     letter-spacing: 0.5rem;
     font-size: var(--big-font-size, 20px);
+    z-index: 2;
 }
 
 .title p {
@@ -260,8 +253,8 @@ main {
     position: absolute;
     right: 9px;
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Footer */
@@ -428,6 +421,9 @@ aside:first-child {
     .search-container input {
         height: 2.5rem;
         font-size: 0.8rem;
+    }
+    .content li {
+        margin-left: -1rem;
     }
 }
 
