@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/02641f71b5.js" crossorigin="anonymous"></script>
+    <title>Origami</title>
+</head>
+<body>
+    <header>
+        <div class="button escape">
+            <a href="../index.html"><i class="fa-solid fa-angle-left"></i></a>
+        </div>
+    </header>
+
+    <main>
+        <form action="#" method="post">
+            <label for="origami_name">Name</label>
+            <input type="text" id="origami_name" name="origami_name" placeholder="Ryujin 3.5" required>
+            
+            <fieldset>
+                <label for="designer_first_name">Fisrt Name</label>
+                <input type="text" id="designer_first_name" name="designer_first_name" placeholder="Satoshi" required>
+                <label for="designer_last_name">Last Name</label>
+                <input type="text" id="designer_last_name" name="designer_last_name" placeholder="Kamiya" required>
+            
+            </fieldset>
+            <label for="origami_image">Image</label>
+            <input type="file" id="origami_image" name="origami_image" accept="image/*" required>
+            
+            <fieldset>
+                <label for="origami_papertype">Paper Type Recommended</label>
+                <select id="origami_papertype" name="origami_papertype" required>
+                    <option value="" disabled selected>Select Paper Type</option>
+                    <option value="washi">Washi</option>
+                    <option value="kami">Kami</option>
+                    <option value="kraft">Kraft</option>
+                    <option value="foil">Foil</option> 
+                </select>
+                <label for="origami_papersize">Paper Size Recommended</label>
+                <input type="number" id="origami_papersize" name="origami_papersize" placeholder="15" min="1" max="100" required><span>cm</span>
+            </fieldset>
+
+            <fieldset>
+                <label for="origami_tutorial">Origami Tutorials</label>
+                <input type="url" id="origami_tutorial" name="origami_tutorial" placeholder="https://www.youtube.com/watch?v=...">
+                <label for="origami_diagram">Diagram</label>
+                <input type="url" id="origami_diagram" name="origami_diagram" placeholder="https://www.origami.com/diagrams/...">
+                <input type="file" id="origami_diagram_file" name="origami_diagram_file" accept=".jpg,.jpeg,.png,.webp,.bmp">
+            </fieldset>
+            <button type="submit">Add Origami</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 The Art of Origami - All rights Reserves</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
