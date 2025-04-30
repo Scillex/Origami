@@ -10,45 +10,52 @@
 <body>
     <header>
         <div class="button escape">
-            <a href="../index.html"><i class="fa-solid fa-angle-left"></i></a>
+            <a href="index.html"><i class="fa-solid fa-angle-left"></i></a>
         </div>
     </header>
 
     <main>
         <form action="#" method="post">
-            <label for="origami_name">Name</label>
+            <label for="origami_name">Name*</label>
             <input type="text" id="origami_name" name="origami_name" placeholder="Ryujin 3.5" required>
+            <label for="origami_description">Description</label>
+            <textarea id="origami_description" name="origami_description" rows="5" cols="40" placeholder="Ryujin 3.5 is an origami representation of an Asian dragon, with a long, sinuous body, sharp claws, curved horns and floating whiskers. Its surface is covered with detailed scales." maxlength="500"></textarea>
             
             <fieldset>
-                <label for="designer_first_name">Fisrt Name</label>
+                <label for="designer_first_name">First Name*</label>
                 <input type="text" id="designer_first_name" name="designer_first_name" placeholder="Satoshi" required>
-                <label for="designer_last_name">Last Name</label>
+                <label for="designer_last_name">Last Name*</label>
                 <input type="text" id="designer_last_name" name="designer_last_name" placeholder="Kamiya" required>
             
             </fieldset>
-            <label for="origami_image">Image</label>
+            <label for="origami_image">Image*</label>
             <input type="file" id="origami_image" name="origami_image" accept="image/*" required>
             
             <fieldset>
                 <label for="origami_papertype">Paper Type Recommended</label>
-                <select id="origami_papertype" name="origami_papertype" required>
+                <select id="origami_papertype" name="origami_papertype">
                     <option value="" disabled selected>Select Paper Type</option>
                     <option value="washi">Washi</option>
                     <option value="kami">Kami</option>
                     <option value="kraft">Kraft</option>
                     <option value="foil">Foil</option> 
                 </select>
-                <label for="origami_papersize">Paper Size Recommended</label>
+                <label for="origami_papersize">Paper Size Recommended*</label>
                 <input type="number" id="origami_papersize" name="origami_papersize" placeholder="15" min="1" max="100" required><span>cm</span>
             </fieldset>
 
             <fieldset>
-                <label for="origami_tutorial">Origami Tutorials</label>
+                <label for="origami_tutorial">Tutorials</label>
                 <input type="url" id="origami_tutorial" name="origami_tutorial" placeholder="https://www.youtube.com/watch?v=...">
                 <label for="origami_diagram">Diagram</label>
                 <input type="url" id="origami_diagram" name="origami_diagram" placeholder="https://www.origami.com/diagrams/...">
                 <input type="file" id="origami_diagram_file" name="origami_diagram_file" accept=".jpg,.jpeg,.png,.webp,.bmp">
+                <label for="origami_cp">Crease Pattern</label>
+                <input type="file" id="origami_cp" name="origami_cp" accept=".jpg,.jpeg,.png,.webp,.bmp">
             </fieldset>
+            <label for="origami_tips">Tips</label>
+            <textarea id="origami_tips" name="origami_tips" rows="3" cols="40" placeholder="e.g., Use very thin and strong paper, like kozo or sandwich paper. Pre-crease the scale grid carefully before shaping the body." maxlength="200"></textarea>
+
             <button type="submit">Add Origami</button>
         </form>
     </main>

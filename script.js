@@ -72,3 +72,14 @@ if (currentPage.includes('introduction.html') || currentPage.includes('basic-fou
         updateActiveSection();
     });
 }
+
+document.querySelector("form").addEventListener("submit", function(event) {
+    // Vérifie si au moins un champ est rempli
+    if (!document.getElementById("origami_tutorial").value &&
+        !document.getElementById("origami_diagram").value &&
+        !document.getElementById("origami_diagram_file").files.length &&
+        !document.getElementById("origami_cp").files.length) {
+        alert("Veuillez remplir au moins un des champs (Tutorial, Diagram ou Crease Pattern).");
+        event.preventDefault();  // Empêche l'envoi du formulaire
+    }
+});
