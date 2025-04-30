@@ -1,0 +1,58 @@
+:root {
+    --main-color: #be8b37;
+    --secondary-color: #e1a94f;
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --border-color: rgb(184, 184, 184);
+    --hover-background-color: rgb(235, 235, 235);
+    --menu-background-color: rgb(255, 255, 255);
+    --menu-border-color: rgb(235, 235, 235);
+    --select-border-color: rgb(155, 153, 153);
+    --box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+
+    /* Variables CSS pour les dimensions */
+    --padding: 20px;
+    --border-radius: 20px;
+    --font-size: 16px;
+    --big-font-size: 20px;
+    --giga-font-size: 2.5rem;
+    --aside-width: 40rem;
+    --line-height: 1.9;
+}
+
+/* Styles globaux */
+body {
+    background-color: var(--background-color);
+    font-family: 'Noto Sans JP', system-ui, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+}
+
+::selection {
+    background-color: var(--secondary-color); /* Couleur de fond */
+    color: auto; /* Couleur du texte */
+}
+
+.fa-solid {
+    font-size: 1.4rem;
+}
+
+.button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 37px;
+    height: 37px;
+    border-radius: 5px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button:hover {
+    background-color: var(--hover-background-color);
+}

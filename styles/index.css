@@ -1,0 +1,224 @@
+@import 'root.css';
+@import 'joshwcomeau_reset.css';
+
+/* En-tête */
+header {
+    position: relative;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+    gap: 20px;
+}
+
+.button.plus {
+    right: calc(1rem + 37px + 10px);
+    border-radius: 100%;
+}
+
+.button.plus a {
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Menu hamburger */
+
+.menu-hamburger {
+    display: none;
+    background-color: var(--menu-background-color);
+    position: absolute;
+    right: 1rem;
+    top: calc(1rem + 37px);
+    padding: 10px;
+    border: solid 1px var(--menu-border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    z-index: 10;
+}
+
+.menu-hamburger ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-hamburger li {
+    width: 100%;
+    padding: 5px 0;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid var(--select-border-color);
+    font-size: var(--font-size);
+}
+
+.menu-hamburger li:last-child {
+    border-bottom: none;
+}
+
+.menu-hamburger.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.select-hamburger {
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text-color);
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.select-hamburger:hover {
+    background-color: var(--hover-background-color);
+}
+
+/* Navigation */
+.index-nav {
+    margin-top: 5vh;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.index-nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: inherit;
+    height: 100%;
+}
+
+.index-nav li {
+    flex: 1;
+    padding: 0;
+    border-bottom: 1px solid var(--border-color);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.index-nav li:hover {
+    background-color: var(--hover-background-color);
+}
+
+.index-nav a {
+    text-decoration: none;
+    text-align: center;
+    color: inherit;
+    font-size: var(--big-font-size, 20px);
+    font-weight: bold;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 10px;
+}
+
+/* Contenu principal */
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 4vh;
+    margin-bottom: 10px;
+}
+
+.title h1 {
+    font-size: var(--giga-font-size, 2.5rem);
+}
+
+#furigana {
+    visibility: hidden;
+    margin-left: 0.5rem;
+    margin-bottom: -0.9em;
+    letter-spacing: 0.5rem;
+    font-size: var(--big-font-size, 20px);
+    z-index: 2;
+}
+
+.title p {
+    margin-top: 2px;
+    font-size: var(--big-font-size, 20px);
+    word-spacing: 3px;
+}
+
+.search-container-parent {
+    width: 100%;
+    margin-bottom: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.search-container {
+    width: 60%;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.search-container input[type="text"] {
+    width: 100%;
+    padding: 16px;
+    padding-right: 3rem;
+    border: none;
+    border-radius: 30px;
+    font-size: var(--font-size, 16px);
+    outline: none;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-container input:focus {
+    background-color: rgb(255, 255, 255);
+    box-shadow: var(--box-shadow);
+}
+
+.search-container button {
+    background-color: inherit;
+    color: var(--main-color);
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: var(--font-size, 16px);
+    color: var(--text-color);
+}
