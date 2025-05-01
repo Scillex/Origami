@@ -56,3 +56,30 @@ body {
 .button:hover {
     background-color: var(--hover-background-color);
 }
+
+footer {
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: var(--font-size, 16px);
+    color: var(--text-color);
+}
+
+@media (max-width: 492px) {
+    :root {
+        --giga-font-size: 1.7rem;
+        --big-font-size: 0.7rem;
+        --font-size: 0.7rem;
+        --border-radius: 10px;
+    }
+    .button {
+        width: 27px;
+        height: 27px;
+    }
+    .fa-solid {
+        font-size: 1rem;
+    }
+}

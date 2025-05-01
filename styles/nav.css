@@ -123,35 +123,6 @@ aside:first-child {
 
 /* Media Queries */
 @media (max-width: 492px) {
-    :root {
-        --giga-font-size: 1.7rem;
-        --big-font-size: 0.7rem;
-        --font-size: 0.7rem;
-        --border-radius: 10px;
-    }
-    .index-nav {
-        margin-top: 2vh;
-    }
-    #furigana {
-        font-size: 0.6rem;
-    }
-    .button {
-        width: 27px;
-        height: 27px;
-    }
-    .fa-solid {
-        font-size: 1rem;
-    }
-    .menu-hamburger {
-        top: calc(1rem + 27px);
-    }
-    .search-container {
-        width: 75%;
-    }
-    .search-container input {
-        height: 2.5rem;
-        font-size: 0.8rem;
-    }
     .content li {
         margin-left: -1rem;
     }
