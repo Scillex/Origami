@@ -1,7 +1,7 @@
 :root {
     --main-color: #be8b37;
     --secondary-color: #e1a94f;
-    --background-color: #ffffff;
+    --background-color: white;
     --text-color: #000000;
     --border-color: rgb(184, 184, 184);
     --hover-background-color: rgb(235, 235, 235);
@@ -24,7 +24,7 @@
 body {
     background-color: var(--background-color);
     font-family: 'Noto Sans JP', system-ui, sans-serif;
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     text-align: center;

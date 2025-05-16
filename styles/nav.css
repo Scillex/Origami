@@ -37,19 +37,12 @@ aside:first-child {
 .table-of-contents {
     position: sticky;
     top: 0;
-    height: 100%;
     margin-top: 5rem;
+    padding: 3rem 1rem;
 }
 
 .container aside:first-child div{
     scroll-margin-top: 4vh;
-}
-
-.table-of-contents {
-    display: flex;
-    justify-content: flex-start;
-    background: var(--background-color, inherit);
-    padding: 3rem 1rem;
 }
 
 .table-of-contents ul {

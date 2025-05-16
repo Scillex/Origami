@@ -38,7 +38,7 @@ if (currentPage.includes('introduction.html') || currentPage.includes('basic-fou
     // Table of contents
     document.addEventListener("DOMContentLoaded", function () {
         const sections = document.querySelectorAll(
-            "#origins-and-etymology, #ancient-roots-china-and-early-japan, #development-within-japanese-culture, #the-edo-period-formalization-and-popularization, #early-written-records, #western-influence-and-globalization, #modern-origami-and-its-masters, #artistic-and-technical-innovations, #beyond-art-scientific-and-technological-applications, #therapeutic-benefits, #extended-definition-creativity-and-personal-interpretation, #symbols-and-meanings-the-crane-and-beyond, #origami-an-accessible-and-universal-art, #the-importance-of-diagrams-a-universal-visual-language, #conclusion"
+            "#origins-and-etymology, #ancient-roots-china-and-early-japan, #development-within-japanese-culture, #the-edo-period-formalization-and-popularization, #early-written-records, #western-influence-and-globalization, #modern-origami-and-its-masters, #artistic-and-technical-innovations, #beyond-art-scientific-and-technological-applications, #therapeutic-benefits, #extended-definition-creativity-and-personal-interpretation, #symbols-and-meanings-the-crane-and-beyond, #origami-an-accessible-and-universal-art, #the-importance-of-diagrams-a-universal-visual-language, #conclusion, #basic-foundations, #mountain-valley-folds, #symbols-notations, #classic-bases, #model-transmission, #modern-techniques, #materials, #first-models, #resources"
         );
         const navLinks = document.querySelectorAll(".table-of-contents li a");
     
