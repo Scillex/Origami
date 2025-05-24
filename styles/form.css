@@ -13,17 +13,59 @@
 }
 
 main {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Deux colonnes, une pour le label, l'autre pour l'input */
-    grid-gap: 20px; /* Espacement entre les éléments */
     padding: 20px;
     margin-top: 50px;
 }
 
 form {
-    grid-column: 1 / -1; /* Fait en sorte que le formulaire occupe toute la largeur de la grid */
     display: grid;
-    grid-gap: 15px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto auto auto;
+    gap: 2%;
+    grid-template-areas:
+    "form-name form-image"
+    "form-designer form-image"
+    "form-description form-image"
+    "form-description form-paper"
+    "form-instructions form-instructions"
+    "form-tips form-tips"
+    "form-submit form-submit";
+    margin-bottom: 100px;
+}
+
+#form-name {
+    grid-area: form-name;
+}
+
+#form-image {
+    grid-area: form-image;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    max-width: 400px;
+}
+
+#form-designer {
+    grid-area: form-designer;
+}
+
+#form-description {
+    grid-area: form-description;
+}
+
+#form-paper {
+    grid-area: form-paper;
+}
+
+#form-instructions {
+    grid-area: form-instructions;
+}
+
+#form-tips {
+    grid-area: form-tips;
+}
+
+#form-submit {
+    grid-area: form-submit;
 }
 
 .form-group {
@@ -34,8 +76,6 @@ form {
 }
 
 form fieldset {
-    grid-column: 1 / -1; /* Les fieldsets prennent toute la largeur du formulaire */
-    border: 2px solid #ccc;
     padding: 15px;
 }
 
@@ -45,34 +85,44 @@ form fieldset legend {
     margin-bottom: 10px;
 }
 
-/* Labels */
 label {
     font-size: 1rem;
     font-weight: bold;
 }
 
-/* Inputs et textareas */
-input[type="text"],
-input[type="number"],
-input[type="url"],
-input[type="file"],
+input,
 select,
 textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
+    padding: 5px;
     border-radius: 5px;
-    font-size: 1rem;
+    height: 100%;
+    width: 100%;
 }
 
-textarea {
-    resize: vertical; /* Permet de redimensionner la textarea uniquement en hauteur */
+input {
+    max-height: 50px;
 }
 
-/* Bouton */
+#form-image input {
+    height: 100%;
+    max-height: none;
+    width: 100%;
+    background-color: #ddd;
+    border: 2px dashed #999;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+#form-image input:hover {
+  background-color: #ccc;
+  border-color: #666;
+}
+
 button {
-    grid-column: 1 / -1; /* Le bouton occupe toute la largeur du formulaire */
+    margin-top: 15px;
     padding: 15px;
+    width: 200px;
     background-color: var(--main-color);
     color: #fff;
     border: none;
@@ -83,20 +133,10 @@ button {
     font-weight: 800;
 }
 
-.form-button:hover {
-    background-color: #8b6221;
+button:hover {
+    background-color: #9d6f25;
 }
 
 input:invalid {
     border: 2px solid red;
-}
-
-@media (max-width: 768px) {
-    main {
-        grid-template-columns: 1fr; /* Sur petit écran, une seule colonne */
-    }
-    
-    form {
-        grid-template-columns: 1fr; /* Formulaire sur une seule colonne */
-    }
 }
