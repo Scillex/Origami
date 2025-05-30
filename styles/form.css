@@ -1,7 +1,6 @@
 @import 'root.css';
 @import 'joshwcomeau_reset.css';
 
-
 .escape a {
     text-decoration: none;
     color: inherit;
@@ -19,9 +18,7 @@ main {
 
 form {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto auto auto auto auto;
-    gap: 2%;
+    grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
     "form-name form-image"
     "form-designer form-image"
@@ -30,53 +27,36 @@ form {
     "form-instructions form-instructions"
     "form-tips form-tips"
     "form-submit form-submit";
+    gap: 1.5rem;
     margin-bottom: 100px;
 }
 
-#form-name {
-    grid-area: form-name;
-}
-
+#form-name { grid-area: form-name; }
 #form-image {
     grid-area: form-image;
     width: 100%;
     aspect-ratio: 1 / 1;
     max-width: 400px;
 }
-
-#form-designer {
-    grid-area: form-designer;
-}
-
-#form-description {
-    grid-area: form-description;
-}
-
-#form-paper {
-    grid-area: form-paper;
-}
-
-#form-instructions {
-    grid-area: form-instructions;
-}
-
-#form-tips {
-    grid-area: form-tips;
-}
-
-#form-submit {
-    grid-area: form-submit;
-}
+#form-designer { grid-area: form-designer; }
+#form-description { grid-area: form-description; }
+#form-paper { grid-area: form-paper; }
+#form-instructions { grid-area: form-instructions; }
+#form-tips { grid-area: form-tips; }
+#form-submit { grid-area: form-submit; }
 
 .form-group {
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     justify-content: center;
     flex-direction: column;
+    width: 100%;
 }
 
 form fieldset {
     padding: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--main-color, #ccc);
 }
 
 form fieldset legend {
@@ -93,10 +73,11 @@ label {
 input,
 select,
 textarea {
-    padding: 5px;
+    padding: 8px;
     border-radius: 5px;
-    height: 100%;
     width: 100%;
+    box-sizing: border-box;
+    font-size: 1rem;
 }
 
 input {
@@ -115,15 +96,16 @@ input {
 }
 
 #form-image input:hover {
-  background-color: #ccc;
-  border-color: #666;
+    background-color: #ccc;
+    border-color: #666;
 }
 
 button {
     margin-top: 15px;
     padding: 15px;
-    width: 200px;
-    background-color: var(--main-color);
+    width: 100%;
+    max-width: 250px;
+    background-color: var(--main-color, #b8860b);
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -131,6 +113,7 @@ button {
     cursor: pointer;
     transition: background-color 0.3s;
     font-weight: 800;
+    align-self: center;
 }
 
 button:hover {
@@ -139,4 +122,25 @@ button:hover {
 
 input:invalid {
     border: 2px solid red;
+}
+
+@media (max-width: 555px) {
+    form {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "form-name"
+            "form-designer"
+            "form-image"
+            "form-description"
+            "form-paper"
+            "form-instructions"
+            "form-tips"
+            "form-submit";
+        gap: 2%;
+        margin-bottom: 250px;
+        align-items: center;
+    }
+    #form-image {
+    max-width: none;
+}
 }
