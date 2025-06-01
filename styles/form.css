@@ -18,7 +18,7 @@ main {
 
 form {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(200px, 650px));
     grid-template-areas:
     "form-name form-image"
     "form-designer form-image"
@@ -85,9 +85,9 @@ input {
 }
 
 #form-image input {
-    height: 100%;
     max-height: none;
-    width: 100%;
+    width: clamp(200px, 100%, 500px);
+    aspect-ratio: 1 / 1;
     background-color: #ddd;
     border: 2px dashed #999;
     border-radius: 8px;
