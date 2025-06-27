@@ -108,3 +108,38 @@ dialog.addEventListener('mousedown', (event) => {
         dialog.close();
     }
 });
+
+// Afficher l'image sélectionnée dans le formulaire et remplacer l'input par l'aperçu
+const imageInput = document.getElementById('origami_image');
+let previewImg = document.getElementById('origami_image_preview');
+if (!previewImg) {
+    previewImg = document.createElement('img');
+    previewImg.id = 'origami_image_preview';
+    previewImg.style.maxWidth = '100%';
+    previewImg.style.display = 'none';
+    previewImg.style.marginTop = '10px';
+    const formImageDiv = document.getElementById('form-image');
+    formImageDiv.appendChild(previewImg);
+}
+imageInput.addEventListener('change', function (event) {
+    const file = event.target.files[0];
+    if (file && file.type.startsWith('image/')) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            previewImg.src = e.target.result;
+            previewImg.style.display = 'block';
+            imageInput.style.display = 'none'; // Masquer l'input après sélection
+        };
+        reader.readAsDataURL(file);
+    } else {
+        previewImg.src = '';
+        previewImg.style.display = 'none';
+        imageInput.style.display = ''; // Réafficher l'input si pas d'image
+    }
+});
+// Permettre de re-sélectionner une image en cliquant sur l'aperçu
+previewImg.addEventListener('click', function () {
+    imageInput.style.display = '';
+    imageInput.value = '';
+    previewImg.style.display = 'none';
+});
