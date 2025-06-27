@@ -9,9 +9,7 @@
 </head>
 <body>
     <header>
-        <div class="button plus">
-            <a href="form.html"><i class="fa-solid fa-plus"></i></a>
-        </div>
+        <button type="button" class="button" data-open-modal><i class="fa-solid fa-plus"></i></button>
         <div class="button hamburger"><i class="fa-solid fa-bars"></i></div>
 
         <div class="menu-hamburger">
@@ -35,6 +33,99 @@
     </header>
 
     <main>
+        <dialog data-modal>
+            <form action="#" method="post">
+                <h2 id="form-title">Add Origami</h2>
+                <button type="button" id='form-close-button' class='button' data-close-modal><i class="fa-solid fa-xmark"></i></button>
+                <div class="form-group" id="form-name">
+                    <label for="origami_name">Name*</label>
+                    <input type="text" id="origami_name" name="origami_name" placeholder="Ryujin 3.5" required>
+                </div>
+
+                <div class="form-group" id="form-image">
+                    <label for="origami_image">Image*</label>
+                    <input type="file" id="origami_image" name="origami_image" accept="image/*" required>
+                </div>
+
+                <fieldset id="form-designer">
+                    <legend>Designer Information</legend>
+                    <div class="form-group">
+                        <label for="designer_first_name">First Name*</label>
+                        <input type="text" id="designer_first_name" name="designer_first_name" placeholder="Satoshi" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="designer_last_name">Last Name*</label>
+                        <input type="text" id="designer_last_name" name="designer_last_name" placeholder="Kamiya" required>
+                    </div>
+                </fieldset>
+
+                <div class="form-group" id="form-description">
+                    <label for="origami_description">Description</label>
+                    <textarea id="origami_description" name="origami_description" rows="5" cols="40" placeholder="Ryujin 3.5 is an origami representation of an Asian dragon..." maxlength="500"></textarea>
+                </div>
+
+                <fieldset id="form-paper">
+                    <legend>Paper Information</legend>
+                    <div class="form-group">
+                        <label for="origami_papertype">Paper Type Recommended</label>
+                        <select id="origami_papertype" name="origami_papertype">
+                            <option value="" disabled selected>Select Paper Type</option>
+                            <option value="kami">Kami</option>
+                            <option value="Tant">Tant</option>
+                            <option value="washi">Washi</option>
+                            <option value="chiyogami">Chiyogami</option>
+                            <option value="yuzen">Yuzen</option>
+                            <option value="tissue_foil">Tissue Foil</option>
+                            <option value="kraft">Kraft</option>
+                            <option value="mulberry">Mulberry</option>
+                            <option value="foil">Foil</option>
+                            <option value="glassine">Glassine</option>
+                            <option value="origamido">Origamido</option>
+                            <option value="unryu">Unryu</option> 
+                            <option value="elephant_hide">Elephant Hide</option>
+                            <option value="lizard_hide">Lizard Hide</option>
+                            <option value="kinumomi">Kinumomi</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="origami_papersize">Paper Size Recommended (cm)*</label>
+                        <input type="number" id="origami_papersize" name="origami_papersize" placeholder="15" min="1" max="150" required>
+                    </div>
+                </fieldset>
+
+                <fieldset id="form-instructions">
+                    <legend>Origami Instructions</legend>
+                    <div class="form-group">
+                        <label for="origami_tutorial">Tutorials</label>
+                        <input type="url" id="origami_tutorial" name="origami_tutorial" placeholder="https://www.youtube.com/watch?v=...">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="origami_diagram">Diagram</label>
+                        <input type="url" id="origami_diagram" name="origami_diagram" placeholder="https://www.origami.com/diagrams/...">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="file" id="origami_diagram_file" name="origami_diagram_file" accept=".jpg,.jpeg,.png,.webp,.bmp">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="origami_cp">Crease Pattern</label>
+                        <input type="file" id="origami_cp" name="origami_cp" accept=".jpg,.jpeg,.png,.webp,.bmp">
+                    </div>
+                </fieldset>
+
+                <div class="form-group" id="form-tips">
+                    <label for="origami_tips">Tips</label>
+                    <textarea id="origami_tips" name="origami_tips" rows="3" cols="40" placeholder="Use very thin and strong paper..." maxlength="200"></textarea>
+                </div>
+
+                <button type="submit" id="form-button">Add Origami</button>
+            </form>
+        </dialog>
+
         <div class="title">
             <h4 id="furigana">おりがみ</h4>
             <h1 id="title">折り紙</h1>

@@ -11,19 +11,8 @@ header {
     gap: 20px;
 }
 
-.button.plus {
+button[data-open-modal] {
     right: calc(1rem + 37px + 10px);
-    border-radius: 100%;
-}
-
-.button.plus a {
-    text-decoration: none;
-    color: inherit;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 /* Menu hamburger */
@@ -185,7 +174,7 @@ main {
 
 .search-container input[type="text"] {
     width: 100%;
-    padding: 16px;
+    padding: 25px;
     padding-right: 3rem;
     border: none;
     border-radius: 30px;
@@ -205,12 +194,186 @@ main {
     border: none;
     cursor: pointer;
     position: absolute;
-    right: 9px;
+    right: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/* Formulaire d'upload */
+dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    border-radius: 12px;
+    padding: 30px;
+    background: white;
+    width: 70%;
+    max-width: 100vw;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    margin: 0 5vw;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px);
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "form-title form-title"
+        "form-name form-image"
+        "form-designer form-image"
+        "form-description form-description"
+        "form-paper form-paper"
+        "form-instructions form-instructions"
+        "form-tips form-tips"
+        "form-submit form-submit";
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+#form-title {
+    grid-area: form-title;
+    font: 700 1.7rem var(--font-family, 'Arial', sans-serif);
+    margin: 5px 0;
+    text-align: center;
+}
+
+#form-name { grid-area: form-name; }
+#form-image { 
+    grid-area: form-image;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+}
+
+#form-image input {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+}
+
+#form-description { grid-area: form-description; }
+#form-paper { grid-area: form-paper; }
+#form-instructions { grid-area: form-instructions; }
+#form-tips { grid-area: form-tips; }
+
+#form-button {
+    grid-area: form-submit;
+    margin-top: 15px;
+    padding: 15px;
+    width: 100%;
+    max-width: 250px;
+    background-color: var(--main-color, #b8860b);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: 800;
+    justify-self: center;
+    display: block;
+}
+#form-button:hover {
+    background-color: #9d6f25;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+form fieldset {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid var(--main-color, #ccc);
+}
+
+form fieldset legend {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input {
+    max-height: 42px;
+}
+
+#form-image input {
+    max-height: none;
+    width: 100%;
+    background-color: #eee;
+    border: 2px dashed #aaa;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+#form-image input:hover {
+    background-color: #ddd;
+    border-color: #777;
+}
+
+input:invalid {
+    border: 2px solid red;
+}
+
+@media (max-width: 700px) {
+    form {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "form-title"
+            "form-name"
+            "form-image"
+            "form-designer"
+            "form-description"
+            "form-paper"
+            "form-instructions"
+            "form-tips"
+            "form-submit";
+    }
+
+    #form-image {
+        max-width: 100%;
+        aspect-ratio: auto;
+    }
+
+    #form-button {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+/* Responsive styles */
 @media (max-width: 492px) {
     .index-nav {
         margin-top: 2vh;

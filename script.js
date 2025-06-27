@@ -73,6 +73,7 @@ if (currentPage.includes('introduction.html') || currentPage.includes('basic-fou
     });
 }
 
+// Formulaire d'upload
 document.querySelector("form").addEventListener("submit", function(event) {
     // Vérifie si au moins un champ est rempli
     if (!document.getElementById("origami_tutorial").value &&
@@ -81,5 +82,29 @@ document.querySelector("form").addEventListener("submit", function(event) {
         !document.getElementById("origami_cp").files.length) {
         alert("Veuillez remplir au moins un des champs (Tutorial, Diagram ou Crease Pattern).");
         event.preventDefault();  // Empêche l'envoi du formulaire
+    }
+});
+
+const dialog = document.querySelector('[data-modal]');
+const openModalButton = document.querySelector('[data-open-modal]');
+const closeModalButton = document.querySelector('[data-close-modal]');
+openModalButton.addEventListener('click', () => {
+    dialog.showModal();
+});
+closeModalButton.addEventListener('click', () => {
+    dialog.close();
+});
+
+// Fermer le modal si on clique en dehors de la boîte de dialogue
+dialog.addEventListener('mousedown', (event) => {
+    // Vérifie si le clic est sur le fond du <dialog> (et pas sur son contenu)
+    const rect = dialog.getBoundingClientRect();
+    if (
+        event.clientX < rect.left ||
+        event.clientX > rect.right ||
+        event.clientY < rect.top ||
+        event.clientY > rect.bottom
+    ) {
+        dialog.close();
     }
 });
